@@ -1,0 +1,12 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "model": "claude-fable-5[1m]",
+  "enabledPlugins": {
+    "playwright@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true
+  },
+  "theme": "dark"
+}

@@ -1,0 +1,40 @@
+{
+  "rootly_1": {
+    "layout": "l1_r2",
+    "dir": "~/Career/Rootly/code/rootly_1",
+    "1": "cd ~/Career/Rootly/code/rootly-dev-env-branch",
+    "2": "~/Career/Rootly/code/rootly_1",
+    "tab_color": "#8B3E00"
+  },
+  "rootly_2": {
+    "layout": "l1_r2",
+    "dir": "~/Career/Rootly/code/rootly_2",
+    "1": "cd ~/Career/Rootly/code/rootly-dev-env-branch",
+    "2": "~/Career/Rootly/code/rootly_2",
+    "tab_color": "#C45500"
+  },
+  "rootly_3": {
+    "layout": "l1_r2",
+    "dir": "~/Career/Rootly/code/rootly_3",
+    "1": "cd ~/Career/Rootly/code/rootly-dev-env-branch",
+    "2": "~/Career/Rootly/code/rootly_3",
+    "tab_color": "#E87A20"
+  },
+  "rootly_4": {
+    "layout": "l1_r2",
+    "dir": "~/Career/Rootly/code/rootly_4",
+    "1": "cd ~/Career/Rootly/code/rootly-dev-env-branch",
+    "2": "~/Career/Rootly/code/rootly_4",
+    "tab_color": "#F5A960"
+  },
+  "rootly_config": {
+    "layout": "l2_r4",
+    "dir": "~/.myconfigurations",
+    "1": "cd ~/.myconfigurations.private.rootly",
+    "4": "cd ~/.myconfigurations.privat.rootly",
+    "5": "cd",
+    "tab_color": "#FF4D4D"
+  },
+}
+
+
