@@ -31,10 +31,10 @@
     "layout": "l2_r4",
     "dir": "~/.myconfigurations",
     "1": "cd ~/.myconfigurations.private.rootly",
-    "4": "cd ~/.myconfigurations.privat.rootly",
+    "4": "cd ~/.myconfigurations.private.rootly",
     "5": "cd",
     "tab_color": "#FF4D4D"
-  },
+  }
 }
 
 
