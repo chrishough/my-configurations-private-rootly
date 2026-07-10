@@ -139,6 +139,18 @@
         "source": "github",
         "repo": "blader/humanizer"
       }
+    },
+    "claude-code-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-code"
+      }
+    },
+    "notion-plugin-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "makenotion/claude-code-notion-plugin"
+      }
     }
   },
   "effortLevel": "high",
