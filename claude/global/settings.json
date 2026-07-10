@@ -1,13 +1,205 @@
 {
-  "attribution": {
-    "commit": "",
-    "pr": ""
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "deny": []
   },
   "model": "claude-fable-5[1m]",
-  "enabledPlugins": {
-    "playwright@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/christopherhough/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/christopherhough/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/christopherhough/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/christopherhough/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/christopherhough/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/christopherhough/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/christopherhough/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/christopherhough/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/christopherhough/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ]
   },
-  "theme": "dark"
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "code-review@claude-code-plugins": true,
+    "frontend-design@claude-code-plugins": true,
+    "ruby-lsp@claude-plugins-official": true,
+    "notion-workspace-plugin@notion-plugin-marketplace": true,
+    "humanizer@humanizer": true
+  },
+  "extraKnownMarketplaces": {
+    "humanizer": {
+      "source": {
+        "source": "github",
+        "repo": "blader/humanizer"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "preferredNotifChannel": "notifications_disabled",
+  "feedbackSurveyState": {
+    "lastShownTime": 1754090209216
+  },
+  "allowedTools": [
+    "Edit:./",
+    "Write:./",
+    "MultiEdit:./",
+    "Read:./",
+    "Glob:./",
+    "Ls:./",
+    "Grep:./"
+  ],
+  "sandboxing": {
+    "Read": {
+      "deny": [
+        "**/.env",
+        "**/.env.*",
+        "**/config/secrets.yml",
+        "**/config/credentials.yml.enc",
+        "**/config/master.key",
+        "**/.myconfigurations.private",
+        "**/*.pem",
+        "**/*.key",
+        "**/*.p12",
+        "**/*.pfx",
+        "**/*.secret",
+        "**/*.secrets",
+        "**/*credentials*",
+        "~/.ssh/**",
+        "~/.gnupg/**",
+        "**/.aws/credentials",
+        "**/.aws/config",
+        "**/secrets/**",
+        "**/*.keystore",
+        "**/*.jks",
+        ".myconfigurations.private"
+      ]
+    },
+    "Bash": {
+      "deny": [
+        "**/chmod **/.env*",
+        "**/chmod **/config/secrets.yml",
+        "**/chmod **/config/credentials.yml.enc",
+        "**/chmod **/config/master.key",
+        "**/chmod **/.myconfigurations.private",
+        "**/cat **/.env*",
+        "**/cat **/config/secrets.yml",
+        "**/cat **/config/credentials.yml.enc",
+        "**/head **/.env*",
+        "**/tail **/.env*",
+        "**/less **/.env*",
+        "**/more **/.env*",
+        "**/vim **/.env*",
+        "**/nano **/.env*",
+        ".myconfigurations.private"
+      ]
+    }
+  }
 }
-
