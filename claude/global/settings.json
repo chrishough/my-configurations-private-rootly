@@ -131,7 +131,8 @@
     "frontend-design@claude-code-plugins": true,
     "ruby-lsp@claude-plugins-official": true,
     "notion-workspace-plugin@notion-plugin-marketplace": true,
-    "humanizer@humanizer": true
+    "humanizer@humanizer": true,
+    "rootly@rootly-agent-tools": true
   },
   "extraKnownMarketplaces": {
     "humanizer": {
@@ -150,6 +151,12 @@
       "source": {
         "source": "github",
         "repo": "makenotion/claude-code-notion-plugin"
+      }
+    },
+    "rootly-agent-tools": {
+      "source": {
+        "source": "github",
+        "repo": "rootlyhq/rootly-agent-tools"
       }
     }
   },
