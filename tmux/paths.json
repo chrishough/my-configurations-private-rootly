@@ -27,6 +27,13 @@
     "2": "~/Career/Rootly/code/rootly_4",
     "tab_color": "#F5A960"
   },
+  "rootly_5": {
+    "layout": "l1_r2",
+    "dir": "~/Career/Rootly/code/rootly_5",
+    "1": "cd ~/Career/Rootly/code/rootly-dev-env-branch",
+    "2": "~/Career/Rootly/code/rootly_5",
+    "tab_color": "#F5A960"
+  },
   "rootly_config": {
     "layout": "l2_r4",
     "dir": "~/.myconfigurations",
