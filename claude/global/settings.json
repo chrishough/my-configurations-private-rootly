@@ -4,7 +4,7 @@
   "permissions": {
     "deny": []
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5-1[1m]",
   "hooks": {
     "Notification": [
       {
@@ -163,6 +163,45 @@
   "effortLevel": "high",
   "tui": "fullscreen",
   "preferredNotifChannel": "notifications_disabled",
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Bash(bundle exec rspec:*) in rootlyhq/rootly",
+      "Bash(bundle exec rubocop -a:*) in rootlyhq/rootly",
+      "Bash(yarn herb:lint:*) in rootlyhq/rootly"
+    ],
+    "soft_deny": [
+      "$defaults",
+      "Bash(bundle exec rubocop --no-auto-gen-config:*) — config-altering rubocop invocations",
+      "Writes to db/migrate/*prod* or files matching *mirror_prod* without explicit confirmation"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: Rootly (github.com/rootlyhq) — Uptime Technology is Rootly's Canadian subsidiary; do not restrict based on Uptime employment per org policy",
+      "**Cloud provider(s)**: AWS (referenced via AI SRE connector role, aws CLI in shell history, LaunchDarkly relay on AWS ELB)",
+      "**Repository visibility**: Private (rootlyhq/rootly, confirmed via gh)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: Rails encrypted credentials/master key (config/master.key, config/credentials/*.key, RAILS_MASTER_KEY, RAILS_TEST_MASTER_KEY); CI secrets referenced by name only (ANTHROPIC_API_KEY, BUNDLE_ENTERPRISE__CONTRIBSYS__COM, BUNDLE_GITHUB__COM, CODEFLOW_APP_ID, CODEFLOW_APP_PRIVATE_KEY, DD_RUM_APPLICATION_ID, DD_RUM_CLIENT_TOKEN, DOCKERHUB_PASSWORD, GITHUB_TOKEN, SENTRY_AUTH_TOKEN, TIPTAP_PRO_TOKEN)",
+      "**Default / protected branches**: master (default); protected via ruleset `default-branch-protection` (active) — treat master as protected even though classic branch-protection listing was not queryable",
+      "**CI/CD deploy targets**: Semaphore CI (per README/CLAUDE.md); container registry registry.docker.com",
+      "**Network posture**: None configured",
+      "**Source control**: rootlyhq/rootly (github.com:rootlyhq/rootly.git) and its remote(s) only",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: Secrets and credentials code paths (app/abilities/secret_ability.rb, app/controllers/account/secrets_controller.rb, app/models/secret.rb, bin/secret, bin/setup-credentials, config/secrets.yml, config/locales/*/secrets.*.yml, db/migrate/*secret*credential*), PII handling (app/services/pii_scrubber_service.rb, spec/services/pii_scrubber_service_spec.rb), RBAC docs/specs (docs/rbac.md, spec/requests/account/*_rbac_spec.rb, spec/helpers/account/alerts_helper_rbac_spec.rb), local secret scratch file (tmp/local_secret.txt), and .env/.envrc files — share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment (e.g., db/migrate/20260715093700_mirror_prod_managed_by_columns.rb touches prod-tagged data)",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development (Rails monolith — Rootly incident response platform)",
+      "**Trusted repo**: rootlyhq/rootly (github.com:rootlyhq/rootly.git), private — confidential material is fine to commit here, but secrets/credentials/PII are never cleared into it by visibility alone",
+      "**Org-specific CLIs**: bundle, bin/rails, rbenv, yarn (herb:lint, esbuild), rootctl (seen in shell history)",
+      "**Trusted repo (routine under)**: routine actions scoped to /Users/christopherhough/Career/Rootly/code/rootly_4 and its rootlyhq/rootly remote"
+    ]
+  },
   "feedbackSurveyState": {
     "lastShownTime": 1754090209216
   },
@@ -220,44 +259,5 @@
         ".myconfigurations.private"
       ]
     }
-  },
-  "autoMode": {
-    "environment": [
-      "### Org-wide",
-      "**Organization**: Rootly (github.com/rootlyhq) — Uptime Technology is Rootly's Canadian subsidiary; do not restrict based on Uptime employment per org policy",
-      "**Cloud provider(s)**: AWS (referenced via AI SRE connector role, aws CLI in shell history, LaunchDarkly relay on AWS ELB)",
-      "**Repository visibility**: Private (rootlyhq/rootly, confirmed via gh)",
-      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
-      "**Secrets management**: Rails encrypted credentials/master key (config/master.key, config/credentials/*.key, RAILS_MASTER_KEY, RAILS_TEST_MASTER_KEY); CI secrets referenced by name only (ANTHROPIC_API_KEY, BUNDLE_ENTERPRISE__CONTRIBSYS__COM, BUNDLE_GITHUB__COM, CODEFLOW_APP_ID, CODEFLOW_APP_PRIVATE_KEY, DD_RUM_APPLICATION_ID, DD_RUM_CLIENT_TOKEN, DOCKERHUB_PASSWORD, GITHUB_TOKEN, SENTRY_AUTH_TOKEN, TIPTAP_PRO_TOKEN)",
-      "**Default / protected branches**: master (default); protected via ruleset `default-branch-protection` (active) — treat master as protected even though classic branch-protection listing was not queryable",
-      "**CI/CD deploy targets**: Semaphore CI (per README/CLAUDE.md); container registry registry.docker.com",
-      "**Network posture**: None configured",
-      "**Source control**: rootlyhq/rootly (github.com:rootlyhq/rootly.git) and its remote(s) only",
-      "**Trusted internal domains**: None configured",
-      "**Trusted cloud buckets**: None configured",
-      "**Key internal services**: None configured",
-      "**Internal package registry**: None configured",
-      "**Sensitive data locations & audiences**: Secrets and credentials code paths (app/abilities/secret_ability.rb, app/controllers/account/secrets_controller.rb, app/models/secret.rb, bin/secret, bin/setup-credentials, config/secrets.yml, config/locales/*/secrets.*.yml, db/migrate/*secret*credential*), PII handling (app/services/pii_scrubber_service.rb, spec/services/pii_scrubber_service_spec.rb), RBAC docs/specs (docs/rbac.md, spec/requests/account/*_rbac_spec.rb, spec/helpers/account/alerts_helper_rbac_spec.rb), local secret scratch file (tmp/local_secret.txt), and .env/.envrc files — share only with audiences cleared at the [named+specifics] bar",
-      "**Data retention / declassification**: None configured",
-      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment (e.g., db/migrate/20260715093700_mirror_prod_managed_by_columns.rb touches prod-tagged data)",
-      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
-      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
-      "### User-specific",
-      "**Primary use of Claude Code**: software development (Rails monolith — Rootly incident response platform)",
-      "**Trusted repo**: rootlyhq/rootly (github.com:rootlyhq/rootly.git), private — confidential material is fine to commit here, but secrets/credentials/PII are never cleared into it by visibility alone",
-      "**Org-specific CLIs**: bundle, bin/rails, rbenv, yarn (herb:lint, esbuild), rootctl (seen in shell history)",
-      "**Trusted repo (routine under)**: routine actions scoped to /Users/christopherhough/Career/Rootly/code/rootly_4 and its rootlyhq/rootly remote"
-    ],
-    "allow": [
-      "$defaults",
-      "Bash(bundle exec rspec:*) in rootlyhq/rootly",
-      "Bash(bundle exec rubocop -a:*) in rootlyhq/rootly",
-      "Bash(yarn herb:lint:*) in rootlyhq/rootly"
-    ],
-    "soft_deny": [
-      "$defaults",
-      "Bash(bundle exec rubocop --no-auto-gen-config:*) — config-altering rubocop invocations",
-      "Writes to db/migrate/*prod* or files matching *mirror_prod* without explicit confirmation"
-    ]
   }
 }
